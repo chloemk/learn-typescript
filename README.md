@@ -14,6 +14,6 @@
 
 타입스크립트는 타입을 지정해줘야하며 자바스크립트와 거의 동일한 데이터 타입을 지원한다.
 
-> [Types](https://github.com/chloemk/learn-typescript/blob/main/notes/What-is-TS.md 'Note #2')
+> [Types](https://github.com/chloemk/learn-typescript/blob/main/notes/Types.md 'Note #2')
 
 ---
