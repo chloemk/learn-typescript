@@ -25,3 +25,11 @@
 > [Generics](https://github.com/chloemk/learn-typescript/blob/main/notes/Generics.md 'Note #3')
 
 ---
+
+## Error Handling
+
+개발할 때 컴파일 단계에서 실수를 잡는 것이 좋으며 실수가 있다면 컴파일 때 에러가 나는 로직을 설정해주는 것이 좋다.
+
+> [Error Handling](https://github.com/chloemk/learn-typescript/blob/main/notes/ErrorHandling.md 'Note #4')
+
+---
