@@ -17,3 +17,11 @@
 > [Types](https://github.com/chloemk/learn-typescript/blob/main/notes/Types.md 'Note #2')
 
 ---
+
+## Generics
+
+제네릭을 이용하면 클래스나 함수, 인터페이스를 다양한 타입으로 선언할 수 있게해준다. 생성하는 시점에 타입을 결정하며 재사용성을 위해 제네릭을 사용하게 된다.
+
+> [Generics](https://github.com/chloemk/learn-typescript/blob/main/notes/Generics.md 'Note #3')
+
+---
