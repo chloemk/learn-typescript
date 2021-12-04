@@ -76,6 +76,8 @@ let arr2: (string | number)[] = [1, 2, 'hi'];
 let arr3: Array<number> = [1, 2, 3];
 ```
 
+---
+
 ### readonly
 
 readonly는 타입 뒤에 []를 붙일 때 사용 가능하고, `Array<number>`와 같은 제너릭 배열 타입에서는 사용 불가하다.
@@ -256,6 +258,53 @@ let yourName: Name;
 ---
 
 ## Union Type
+
+Union Type은 OR과 같은 역할을 한다. 모든 가능한 케이스 중 발생할 수 있는 하나를 담을 수 있는 타입을 만들고 싶을 때 사용한다.
+
+예제 1)
+
+```js
+type Direction = 'left' | 'right' | 'up' | 'down';
+function move(dir: Direction) {
+	console.log(dir);
+}
+move('left');
+```
+
+예제 2)
+
+```js
+type SuccessState = {
+	response: {
+		body: string,
+	},
+};
+type FailState = {
+	response: {
+		body: string,
+	},
+};
+type LoginState = SuccessState | FailState;
+function login(id: string, password: string): Promise<LoginState> {
+	return {
+		response: {
+			body: 'logged in!',
+		},
+	};
+}
+```
+
+---
+
+## Discriminated Union
+
+유니온 타입의 차별화되는 이름의 동일한 타입을 둠으로써 간편하게 구분할 수 있는 것을 말한다. 어떤 케이스든 공통적인 프로퍼티를 가지고 있음으로써 조금 더 구분하기 쉽게 만든다.
+
+---
+
+## Intersection Types
+
+교차 타입은 여러 타입을 하나로 결합한다. `&`와 같은 개념이다
 
 ---
 
