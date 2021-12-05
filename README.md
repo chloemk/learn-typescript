@@ -33,3 +33,11 @@
 > [Error Handling](https://github.com/chloemk/learn-typescript/blob/main/notes/ErrorHandling.md 'Note #4')
 
 ---
+
+## TypeScript Compiler
+
+`tsconfig.json` 파일에서는 프로젝트를 컴파일하는 데 필요한 루트 파일과 컴파일러 옵션을 지정할 수 있다.
+
+> [TypeScript Compiler](https://github.com/chloemk/learn-typescript/blob/main/notes/TS-Complier.md 'Note #5')
+
+---
