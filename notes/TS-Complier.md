@@ -1,4 +1,4 @@
-# TS config
+# TypeScript Complier
 
 HTML에 TS를 연결할 때, 브라우저는 타입스크립트를 읽을 수 없으므로 컴파일된 자바스크립트 파일을 연결해준다.
 
