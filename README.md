@@ -41,3 +41,11 @@
 > [TypeScript Compiler](https://github.com/chloemk/learn-typescript/blob/main/notes/TS-Complier.md 'Note #5')
 
 ---
+
+## Advanced Types
+
+유틸리티 타입은 타입 변환을 쉽게 하기 위하여 사용된다.
+
+> [Advanced Types](https://github.com/chloemk/learn-typescript/blob/main/notes/AdvancedTypes.md 'Note #6')
+
+---
