@@ -160,6 +160,34 @@ let whichColor: string = Color[2]
 console.log(whichColor); // Blue
 ```
 
+> 문자형 enum은 숫자형 enum과 다르게 `auto-incrementing`이 없다.
+
+### 컴파일 시점에서의 enum 특징
+
+enum은 런타임 시점에서는 실제 객체이지만 `keyof`를 사용할 때 주의해야한다.
+일반적으로 `keyof`를 사용해야하는 상황에선 `keyof typeof`를 대신 사용한다.
+
+```js
+enum LogLevel {
+    ERROR, WARN, INFO, DEBUG
+}
+
+// enum의 key 값을 가져오기 위해서는 keyof typeof로 접근해야한다.
+// 'ERROR' | 'WARN' | 'INFO' | 'DEBUG';
+type LogLevelStrings = keyof typeof LogLevel;
+
+function printImportant(key: LogLevelStrings, message: string) {
+    const num = LogLevel[key];
+    if(num <= LogLevel.WARN) {
+        console.log('Log Level key is: ', key);
+        console.log('Log Level value is: ', num);
+        console.log('Log Level message is: ', message);
+    }
+}
+
+printImportant('ERROR', 'This is a message');
+```
+
 ---
 
 ## any
@@ -203,9 +231,24 @@ function func3(): void {
 
 ---
 
+## keyof
+
+`keyof` 키워드는 타입 값에 존재하는 모든 프로퍼티의 키값을 유니온 형태로 리턴 받는다.
+
+```js
+interface Todo {
+  id: number;
+  due: Date;
+}
+type TodoKeys = keyof Todo; // TodoKeys의 타입은 'id' | 'due'
+```
+
+---
+
 ## never
 
-never는 항상 오류를 발생시키거나 `절대 반환하지 않는` 반환 타입으로 쓰인다.
+- never는 항상 오류를 발생시키거나 `절대 반환하지 않는` 반환 타입으로 쓰인다.
+- never는 타입이지만 never 타입의 변수로 선언할 수 없고 함수의 리턴 타입으로 에러가 발생하는 경우 에러를 무시하고 계속 진행하는 역할을 한다.
 
 ```js
 // never를 반환하는 함수는 함수의 마지막에 도달할 수 없다.
@@ -304,7 +347,31 @@ function login(id: string, password: string): Promise<LoginState> {
 
 ## Intersection Types
 
-교차 타입은 여러 타입을 하나로 결합한다. `&`와 같은 개념이다
+교차 타입은 여러 타입을 만족하는 하나의 타입을 의미한다. `&`와 같은 개념이다.
+
+```js
+interface Person {
+	name: string;
+	age: number;
+}
+
+interface Dev {
+	name: string;
+	skill: number;
+}
+
+type Me = Person & Dev;
+```
+
+위 예제에서 Me는 다음과 같이 정의된다.
+
+```js
+{
+	name: string;
+	age: number;
+	skill: string;
+}
+```
 
 ---
 
